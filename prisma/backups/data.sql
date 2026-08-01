@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict 7aCd2SXrJyaeyQIRnkPXePZekt377CIc2zHKDcXp793IgsCrNfL8u8AGqeJEpyG
+-- \restrict MmItrfasfaUYpFhCHBKlmyAaiebj8Ls06AcWdTHGLEUn7PpbO8cGruvbtry2zrc
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
@@ -214,9 +214,9 @@ secretsProviderConnection:owner	Secrets Provider Connection Owner	Full control o
 secretsProviderConnection:user	Secrets Provider Connection User	Read-only access to use secrets from the connection	secretsProviderConnection	t	2026-07-31 01:28:37.083+00	2026-07-31 01:28:37.083+00
 global:admin	Admin	Admin	global	t	2026-07-31 01:24:02.252+00	2026-07-31 01:28:40.017+00
 global:member	Member	Member	global	t	2026-07-31 01:24:02.252+00	2026-07-31 01:28:40.017+00
-project:admin	Project Admin	Project Admin	project	t	2026-07-31 01:24:02.252+00	2026-07-31 01:28:42.762+00
-project:editor	Project Editor	Project Editor	project	t	2026-07-31 01:24:02.252+00	2026-07-31 01:28:42.762+00
-project:viewer	Project Viewer	Project Viewer	project	t	2026-07-31 01:24:02.252+00	2026-07-31 01:28:42.762+00
+project:admin	Project Admin	Full control of settings, members, workflows, credentials and executions	project	t	2026-07-31 01:24:02.252+00	2026-07-31 03:10:36.959+00
+project:editor	Project Editor	Create, edit, and delete workflows, credentials, and executions	project	t	2026-07-31 01:24:02.252+00	2026-07-31 03:10:36.959+00
+project:viewer	Project Viewer	Read-only access to workflows, credentials, and executions	project	t	2026-07-31 01:24:02.252+00	2026-07-31 03:10:36.959+00
 \.
 
 
@@ -225,7 +225,7 @@ project:viewer	Project Viewer	Project Viewer	project	t	2026-07-31 01:24:02.252+0
 --
 
 COPY "public"."user" ("id", "email", "firstName", "lastName", "password", "personalizationAnswers", "createdAt", "updatedAt", "settings", "disabled", "mfaEnabled", "mfaSecret", "mfaRecoveryCodes", "lastActiveAt", "roleSlug") FROM stdin;
-bd3996c8-88f5-45cb-9d05-904774f021fd	anchoresmark@gmail.com	Mark	Anchores	$2a$10$dLGUG/.Zam22Cnl1g5Qd7.pm7eN25T25SfSs7fWDXU1wU12YTZjM6	{"version":"v4","personalization_survey_submitted_at":"2026-07-31T02:26:22.269Z","personalization_survey_n8n_version":"1.111.0","automationGoalDevops":[],"companyType":"ecommerce","role":"engineering"}	2026-07-31 01:20:32.901+00	2026-07-31 02:26:23.949+00	{"userActivated": false}	f	f	\N	\N	2026-07-31	global:owner
+bd3996c8-88f5-45cb-9d05-904774f021fd	anchoresmark@gmail.com	Mark	Anchores	$2a$10$dLGUG/.Zam22Cnl1g5Qd7.pm7eN25T25SfSs7fWDXU1wU12YTZjM6	{"version":"v4","personalization_survey_submitted_at":"2026-07-31T02:26:22.269Z","personalization_survey_n8n_version":"1.111.0","automationGoalDevops":[],"companyType":"ecommerce","role":"engineering"}	2026-07-31 01:20:32.901+00	2026-08-01 01:31:50.707+00	{"userActivated": false}	f	f	\N	\N	2026-07-31	global:owner
 \.
 
 
@@ -419,6 +419,7 @@ COPY "public"."instance_ai_threads" ("id", "resourceId", "title", "metadata", "c
 --
 
 COPY "public"."workflow_entity" ("name", "active", "nodes", "connections", "createdAt", "updatedAt", "settings", "staticData", "pinData", "versionId", "triggerCount", "id", "meta", "parentFolderId", "isArchived", "versionCounter", "description", "activeVersionId", "nodeGroups", "sourceWorkflowId") FROM stdin;
+My workflow	f	[{"parameters":{"httpMethod":"POST","path":"ac5d2e18-6ccb-4c85-ac02-3b2b1db8c28b","options":{}},"type":"n8n-nodes-base.webhook","typeVersion":2.1,"position":[0,0],"id":"bf465183-6e47-401f-838a-37bc7cd7ad4d","name":"Webhook","webhookId":"ac5d2e18-6ccb-4c85-ac02-3b2b1db8c28b"}]	{}	2026-08-01 01:30:58.743+00	2026-08-01 01:30:58.743+00	{"executionOrder":"v1"}	\N	{}	0410ce7c-ed93-4967-9bbb-8d1b898bacb8	0	PKKksaHJN0DVdNsB	\N	\N	f	1	\N	\N	[]	\N
 \.
 
 
@@ -475,6 +476,7 @@ COPY "public"."dynamic_credential_resolver" ("id", "name", "type", "config", "cr
 --
 
 COPY "public"."credentials_entity" ("name", "data", "type", "createdAt", "updatedAt", "id", "isManaged", "isGlobal", "isResolvable", "resolvableAllowFallback", "resolverId") FROM stdin;
+Airtable Personal Access Token account	U2FsdGVkX1+ZbkYFi4ZKLmUq3TROSp4eXrm72cMaXC9ceu/0Rtto0OvqslRVXTx7L6HI39ptx2r9SRwhP9yGmsQavn+C60Fyy4NikZQhN8ywkTsUOA2rPDVxYuyic8RrXqYb1r+o3mda2uaTFks+U1JWSHxsscuBZamkPehA4aE=	airtableTokenApi	2026-08-01 01:40:53.134+00	2026-08-01 01:40:52.871+00	8kcgjdFBsUxQeb3J	f	f	f	f	\N
 \.
 
 
@@ -1164,19 +1166,6 @@ COPY "public"."role_mapping_rule_project" ("roleMappingRuleId", "projectId") FRO
 --
 
 COPY "public"."scope" ("slug", "displayName", "description") FROM stdin;
-workflow:unpublish	Unpublish Workflow	Allows unpublishing workflows.
-workflow:unshare	Unshare Workflow	Allows removing workflow shares.
-credential:unshare	Unshare Credential	Allows removing credential shares.
-agent:create	Create Agent	Allows creating new agents in a project.
-agent:read	Read Agent	Allows reading agent configuration and history.
-agent:update	Update Agent	Allows updating, building, publishing, and managing integrations of agents.
-agent:delete	Delete Agent	Allows deleting agents.
-agent:list	List Agents	Allows listing agents in a project.
-agent:execute	Execute Agent	Allows running agents in chat.
-agent:publish	Publish Agent	Allows publishing agents.
-agent:unpublish	Unpublish Agent	Allows unpublishing agents.
-agent:manage	agent:manage	\N
-aiAssistant:manage	Manage AI Usage	Allows managing AI Usage settings.
 annotationTag:create	Create Annotation Tag	Allows creating new annotation tags.
 annotationTag:read	annotationTag:read	\N
 annotationTag:update	annotationTag:update	\N
@@ -1191,10 +1180,7 @@ communityPackage:update	communityPackage:update	\N
 communityPackage:list	communityPackage:list	\N
 communityPackage:manage	communityPackage:manage	\N
 credential:share	credential:share	\N
-credential:shareGlobally	credential:shareGlobally	\N
 credential:move	credential:move	\N
-credential:connect	Connect End-User Credential	Allows connecting an own account to an end-user credential.
-credential:createEndUser	Manage End-User Credential	Allows creating, deleting, and changing the type of end-user credentials, which resolve to each user's own connection.
 credential:create	credential:create	\N
 credential:read	credential:read	\N
 credential:update	credential:update	\N
@@ -1224,10 +1210,8 @@ project:read	project:read	\N
 project:update	project:update	\N
 project:delete	project:delete	\N
 project:list	project:list	\N
-project:export	Export Project	Allows including projects in a portable package export.
 saml:manage	saml:manage	\N
 securityAudit:generate	securityAudit:generate	\N
-securitySettings:manage	securitySettings:manage	\N
 sourceControl:pull	sourceControl:pull	\N
 sourceControl:push	sourceControl:push	\N
 sourceControl:manage	sourceControl:manage	\N
@@ -1239,7 +1223,6 @@ tag:list	tag:list	\N
 user:resetPassword	user:resetPassword	\N
 user:changeRole	user:changeRole	\N
 user:enforceMfa	user:enforceMfa	\N
-user:generateInviteLink	user:generateInviteLink	\N
 user:create	user:create	\N
 user:read	user:read	\N
 user:update	user:update	\N
@@ -1258,9 +1241,6 @@ projectVariable:list	projectVariable:list	\N
 workersView:manage	workersView:manage	\N
 workflow:share	workflow:share	\N
 workflow:execute	workflow:execute	\N
-workflow:execute-chat	Execute Workflow in Chat	Allows executing workflows in chat.
-workflow:export	Export Workflow	Allows including workflows in a portable package export.
-workflow:import	Import Workflow	Allows importing workflows from a portable package into the project.
 workflow:move	workflow:move	\N
 workflow:activate	workflow:activate	\N
 workflow:deactivate	workflow:deactivate	\N
@@ -1276,7 +1256,6 @@ folder:delete	folder:delete	\N
 folder:list	folder:list	\N
 folder:move	folder:move	\N
 insights:list	insights:list	\N
-insights:read	Read Insights	Allows reading insights data.
 oidc:manage	oidc:manage	\N
 provisioning:manage	provisioning:manage	\N
 dataTable:create	dataTable:create	\N
@@ -1286,22 +1265,15 @@ dataTable:delete	dataTable:delete	\N
 dataTable:list	dataTable:list	\N
 dataTable:readRow	dataTable:readRow	\N
 dataTable:writeRow	dataTable:writeRow	\N
-dataTable:readColumn	dataTable:readColumn	\N
-dataTable:writeColumn	dataTable:writeColumn	\N
 dataTable:listProject	dataTable:listProject	\N
 execution:delete	execution:delete	\N
 execution:read	execution:read	\N
 execution:retry	execution:retry	\N
 execution:list	execution:list	\N
 execution:get	execution:get	\N
-execution:reveal	execution:reveal	\N
-testRun:read	Read Test Run	Allows reading evaluation test runs and their per-case results.
-testRun:list	List Test Runs	Allows listing evaluation test runs for a workflow.
 workflowTags:update	workflowTags:update	\N
 workflowTags:list	workflowTags:list	\N
 role:manage	role:manage	\N
-role:read	role:read	\N
-role:manageProject	Manage project roles	Allows creating, editing, and deleting project role definitions.
 mcp:manage	mcp:manage	\N
 mcp:oauth	mcp:oauth	\N
 mcpApiKey:create	mcpApiKey:create	\N
@@ -1314,30 +1286,6 @@ chatHubAgent:update	chatHubAgent:update	\N
 chatHubAgent:delete	chatHubAgent:delete	\N
 chatHubAgent:list	chatHubAgent:list	\N
 breakingChanges:list	breakingChanges:list	\N
-apiKey:manage	apiKey:manage	\N
-apiKey:list	apiKey:list	\N
-apiKey:create	apiKey:create	\N
-apiKey:delete	apiKey:delete	\N
-apiKey:update	apiKey:update	\N
-encryptionKey:manage	Manage Encryption Keys	Allows listing and rotating instance encryption keys.
-credentialResolver:create	credentialResolver:create	\N
-credentialResolver:read	credentialResolver:read	\N
-credentialResolver:update	credentialResolver:update	\N
-credentialResolver:delete	credentialResolver:delete	\N
-credentialResolver:list	credentialResolver:list	\N
-instanceAi:message	instanceAi:message	\N
-instanceAi:manage	instanceAi:manage	\N
-instanceAi:gateway	instanceAi:gateway	\N
-instanceAi:eval	instanceAi:eval	\N
-roleMappingRule:create	roleMappingRule:create	\N
-roleMappingRule:read	roleMappingRule:read	\N
-roleMappingRule:update	roleMappingRule:update	\N
-roleMappingRule:delete	roleMappingRule:delete	\N
-roleMappingRule:list	roleMappingRule:list	\N
-otel:manage	otel:manage	\N
-workflow:publish	Publish Workflow	Allows publishing workflows.
-workflow:enableRedaction	workflow:enableRedaction	\N
-workflow:disableRedaction	workflow:disableRedaction	\N
 annotationTag:*	annotationTag:*	\N
 auditLogs:*	auditLogs:*	\N
 banner:*	banner:*	\N
@@ -1364,19 +1312,18 @@ workflow:*	workflow:*	\N
 folder:*	folder:*	\N
 insights:*	insights:*	\N
 oidc:*	oidc:*	\N
-dataStore:create	dataStore:create	\N
-dataStore:read	dataStore:read	\N
-dataStore:update	dataStore:update	\N
-dataStore:delete	dataStore:delete	\N
-dataStore:list	dataStore:list	\N
-dataStore:readRow	dataStore:readRow	\N
-dataStore:writeRow	dataStore:writeRow	\N
-dataStore:listProject	dataStore:listProject	\N
-dataStore:*	dataStore:*	\N
 execution:*	execution:*	\N
 workflowTags:*	workflowTags:*	\N
 role:*	role:*	\N
 *	*	\N
+projectVariable:*	projectVariable:*	\N
+provisioning:*	provisioning:*	\N
+dataTable:*	dataTable:*	\N
+mcp:*	mcp:*	\N
+mcpApiKey:*	mcpApiKey:*	\N
+chatHub:*	chatHub:*	\N
+chatHubAgent:*	chatHubAgent:*	\N
+breakingChanges:*	breakingChanges:*	\N
 \.
 
 
@@ -1450,6 +1397,11 @@ global:owner	variable:read
 global:owner	variable:update
 global:owner	variable:delete
 global:owner	variable:list
+global:owner	projectVariable:create
+global:owner	projectVariable:read
+global:owner	projectVariable:update
+global:owner	projectVariable:delete
+global:owner	projectVariable:list
 global:owner	workersView:manage
 global:owner	workflow:share
 global:owner	workflow:execute
@@ -1467,7 +1419,29 @@ global:owner	folder:list
 global:owner	folder:move
 global:owner	insights:list
 global:owner	oidc:manage
+global:owner	provisioning:manage
+global:owner	dataTable:create
+global:owner	dataTable:read
+global:owner	dataTable:update
+global:owner	dataTable:delete
+global:owner	dataTable:list
+global:owner	dataTable:readRow
+global:owner	dataTable:writeRow
+global:owner	dataTable:listProject
 global:owner	role:manage
+global:owner	mcp:manage
+global:owner	mcp:oauth
+global:owner	mcpApiKey:create
+global:owner	mcpApiKey:rotate
+global:owner	chatHub:manage
+global:owner	chatHub:message
+global:owner	chatHubAgent:create
+global:owner	chatHubAgent:read
+global:owner	chatHubAgent:update
+global:owner	chatHubAgent:delete
+global:owner	chatHubAgent:list
+global:owner	breakingChanges:list
+global:owner	externalSecret:use
 global:admin	annotationTag:create
 global:admin	annotationTag:read
 global:admin	annotationTag:update
@@ -1529,10 +1503,21 @@ global:admin	user:update
 global:admin	user:delete
 global:admin	user:list
 global:admin	variable:create
+global:chatUser	chatHub:message
+global:chatUser	chatHubAgent:create
+global:chatUser	chatHubAgent:read
+global:chatUser	chatHubAgent:update
+global:chatUser	chatHubAgent:delete
+global:chatUser	chatHubAgent:list
 global:admin	variable:read
 global:admin	variable:update
 global:admin	variable:delete
 global:admin	variable:list
+global:admin	projectVariable:create
+global:admin	projectVariable:read
+global:admin	projectVariable:update
+global:admin	projectVariable:delete
+global:admin	projectVariable:list
 global:admin	workersView:manage
 global:admin	workflow:share
 global:admin	workflow:execute
@@ -1550,7 +1535,29 @@ global:admin	folder:list
 global:admin	folder:move
 global:admin	insights:list
 global:admin	oidc:manage
+global:admin	provisioning:manage
+global:admin	dataTable:create
+global:admin	dataTable:read
+global:admin	dataTable:update
+global:admin	dataTable:delete
+global:admin	dataTable:list
+global:admin	dataTable:readRow
+global:admin	dataTable:writeRow
+global:admin	dataTable:listProject
 global:admin	role:manage
+global:admin	mcp:manage
+global:admin	mcp:oauth
+global:admin	mcpApiKey:create
+global:admin	mcpApiKey:rotate
+global:admin	chatHub:manage
+global:admin	chatHub:message
+global:admin	chatHubAgent:create
+global:admin	chatHubAgent:read
+global:admin	chatHubAgent:update
+global:admin	chatHubAgent:delete
+global:admin	chatHubAgent:list
+global:admin	breakingChanges:list
+global:admin	externalSecret:use
 global:member	annotationTag:create
 global:member	annotationTag:read
 global:member	annotationTag:update
@@ -1565,12 +1572,16 @@ global:member	tag:list
 global:member	user:list
 global:member	variable:read
 global:member	variable:list
-global:chatUser	chatHub:message
-global:chatUser	chatHubAgent:create
-global:chatUser	chatHubAgent:read
-global:chatUser	chatHubAgent:update
-global:chatUser	chatHubAgent:delete
-global:chatUser	chatHubAgent:list
+global:member	dataTable:list
+global:member	mcp:oauth
+global:member	mcpApiKey:create
+global:member	mcpApiKey:rotate
+global:member	chatHub:message
+global:member	chatHubAgent:create
+global:member	chatHubAgent:read
+global:member	chatHubAgent:update
+global:member	chatHubAgent:delete
+global:member	chatHubAgent:list
 project:admin	credential:share
 project:admin	credential:move
 project:admin	credential:create
@@ -1583,6 +1594,11 @@ project:admin	project:update
 project:admin	project:delete
 project:admin	project:list
 project:admin	sourceControl:push
+project:admin	projectVariable:create
+project:admin	projectVariable:read
+project:admin	projectVariable:update
+project:admin	projectVariable:delete
+project:admin	projectVariable:list
 project:admin	workflow:execute
 project:admin	workflow:move
 project:admin	workflow:create
@@ -1596,22 +1612,53 @@ project:admin	folder:update
 project:admin	folder:delete
 project:admin	folder:list
 project:admin	folder:move
+project:admin	dataTable:create
+project:admin	dataTable:read
+project:admin	dataTable:update
+project:admin	dataTable:delete
+project:admin	dataTable:readRow
+project:admin	dataTable:writeRow
+project:admin	dataTable:listProject
 project:personalOwner	credential:share
 project:personalOwner	credential:move
+credential:owner	credential:share
+credential:owner	credential:move
 project:personalOwner	credential:create
+credential:owner	credential:read
+credential:owner	credential:update
+credential:owner	credential:delete
 project:personalOwner	credential:read
+credential:user	credential:read
 project:personalOwner	credential:update
 project:personalOwner	credential:delete
+workflow:owner	workflow:share
+workflow:owner	workflow:execute
 project:personalOwner	credential:list
 project:personalOwner	project:read
+workflow:owner	workflow:move
+workflow:owner	workflow:read
+workflow:owner	workflow:update
+workflow:owner	workflow:delete
 project:personalOwner	project:list
 project:personalOwner	workflow:share
 project:personalOwner	workflow:execute
 project:personalOwner	workflow:move
 project:personalOwner	workflow:create
+workflow:editor	workflow:execute
 project:personalOwner	workflow:read
 project:personalOwner	workflow:update
+workflow:editor	workflow:read
+workflow:editor	workflow:update
 project:personalOwner	workflow:delete
+secretsProviderConnection:owner	externalSecretsProvider:sync
+secretsProviderConnection:owner	externalSecretsProvider:read
+secretsProviderConnection:owner	externalSecretsProvider:update
+secretsProviderConnection:owner	externalSecretsProvider:delete
+secretsProviderConnection:owner	externalSecretsProvider:list
+secretsProviderConnection:owner	externalSecret:list
+secretsProviderConnection:user	externalSecretsProvider:read
+secretsProviderConnection:user	externalSecretsProvider:list
+secretsProviderConnection:user	externalSecret:list
 project:personalOwner	workflow:list
 project:personalOwner	folder:create
 project:personalOwner	folder:read
@@ -1619,6 +1666,13 @@ project:personalOwner	folder:update
 project:personalOwner	folder:delete
 project:personalOwner	folder:list
 project:personalOwner	folder:move
+project:personalOwner	dataTable:create
+project:personalOwner	dataTable:read
+project:personalOwner	dataTable:update
+project:personalOwner	dataTable:delete
+project:personalOwner	dataTable:readRow
+project:personalOwner	dataTable:writeRow
+project:personalOwner	dataTable:listProject
 project:editor	credential:create
 project:editor	credential:read
 project:editor	credential:update
@@ -1626,6 +1680,11 @@ project:editor	credential:delete
 project:editor	credential:list
 project:editor	project:read
 project:editor	project:list
+project:editor	projectVariable:create
+project:editor	projectVariable:read
+project:editor	projectVariable:update
+project:editor	projectVariable:delete
+project:editor	projectVariable:list
 project:editor	workflow:execute
 project:editor	workflow:create
 project:editor	workflow:read
@@ -1637,69 +1696,26 @@ project:editor	folder:read
 project:editor	folder:update
 project:editor	folder:delete
 project:editor	folder:list
+project:editor	dataTable:create
+project:editor	dataTable:read
+project:editor	dataTable:update
+project:editor	dataTable:delete
+project:editor	dataTable:readRow
+project:editor	dataTable:writeRow
+project:editor	dataTable:listProject
 project:viewer	credential:read
 project:viewer	credential:list
 project:viewer	project:read
 project:viewer	project:list
+project:viewer	projectVariable:read
+project:viewer	projectVariable:list
 project:viewer	workflow:read
 project:viewer	workflow:list
 project:viewer	folder:read
 project:viewer	folder:list
-project:chatUser	agent:execute
-project:chatUser	workflow:execute-chat
-credential:owner	credential:share
-credential:owner	credential:move
-credential:owner	credential:read
-credential:owner	credential:update
-credential:owner	credential:delete
-credential:user	credential:read
-workflow:owner	workflow:share
-workflow:owner	workflow:execute
-workflow:owner	workflow:move
-workflow:owner	workflow:read
-workflow:owner	workflow:update
-workflow:owner	workflow:delete
-workflow:editor	workflow:execute
-workflow:editor	workflow:read
-workflow:editor	workflow:update
-secretsProviderConnection:owner	externalSecretsProvider:sync
-secretsProviderConnection:owner	externalSecretsProvider:read
-secretsProviderConnection:owner	externalSecretsProvider:update
-secretsProviderConnection:owner	externalSecretsProvider:delete
-secretsProviderConnection:owner	externalSecretsProvider:list
-secretsProviderConnection:owner	externalSecret:list
-secretsProviderConnection:user	externalSecretsProvider:read
-secretsProviderConnection:user	externalSecretsProvider:list
-secretsProviderConnection:user	externalSecret:list
-global:owner	externalSecret:use
-global:owner	dataStore:list
-global:admin	externalSecret:use
-global:admin	dataStore:list
-global:member	dataStore:list
-project:admin	dataStore:create
-project:admin	dataStore:read
-project:admin	dataStore:update
-project:admin	dataStore:delete
-project:admin	dataStore:readRow
-project:admin	dataStore:writeRow
-project:admin	dataStore:listProject
-project:personalOwner	dataStore:create
-project:personalOwner	dataStore:read
-project:personalOwner	dataStore:update
-project:personalOwner	dataStore:delete
-project:personalOwner	dataStore:readRow
-project:personalOwner	dataStore:writeRow
-project:personalOwner	dataStore:listProject
-project:editor	dataStore:create
-project:editor	dataStore:read
-project:editor	dataStore:update
-project:editor	dataStore:delete
-project:editor	dataStore:readRow
-project:editor	dataStore:writeRow
-project:editor	dataStore:listProject
-project:viewer	dataStore:read
-project:viewer	dataStore:readRow
-project:viewer	dataStore:listProject
+project:viewer	dataTable:read
+project:viewer	dataTable:readRow
+project:viewer	dataTable:listProject
 \.
 
 
@@ -1708,6 +1724,7 @@ project:viewer	dataStore:listProject
 --
 
 COPY "public"."workflow_history" ("versionId", "workflowId", "authors", "createdAt", "updatedAt", "nodes", "connections", "name", "autosaved", "description", "nodeGroups") FROM stdin;
+0410ce7c-ed93-4967-9bbb-8d1b898bacb8	PKKksaHJN0DVdNsB	Mark Anchores	2026-08-01 01:31:00.367+00	2026-08-01 01:31:00.367+00	[{"parameters":{"httpMethod":"POST","path":"ac5d2e18-6ccb-4c85-ac02-3b2b1db8c28b","options":{}},"type":"n8n-nodes-base.webhook","typeVersion":2.1,"position":[0,0],"id":"bf465183-6e47-401f-838a-37bc7cd7ad4d","name":"Webhook","webhookId":"ac5d2e18-6ccb-4c85-ac02-3b2b1db8c28b"}]	{}	\N	f	\N	[]
 \.
 
 
@@ -1757,6 +1774,7 @@ license.cert	eyJsaWNlbnNlS2V5IjoiLS0tLS1CRUdJTiBMSUNFTlNFIEtFWS0tLS0tXG5JaTErcEJ
 --
 
 COPY "public"."shared_credentials" ("credentialsId", "projectId", "role", "createdAt", "updatedAt") FROM stdin;
+8kcgjdFBsUxQeb3J	BqhttmZEweqZk19v	credential:owner	2026-08-01 01:40:53.134+00	2026-08-01 01:40:53.134+00
 \.
 
 
@@ -1765,6 +1783,7 @@ COPY "public"."shared_credentials" ("credentialsId", "projectId", "role", "creat
 --
 
 COPY "public"."shared_workflow" ("workflowId", "projectId", "role", "createdAt", "updatedAt") FROM stdin;
+PKKksaHJN0DVdNsB	BqhttmZEweqZk19v	workflow:owner	2026-08-01 01:30:58.743+00	2026-08-01 01:30:58.743+00
 \.
 
 
@@ -2111,6 +2130,6 @@ SELECT pg_catalog.setval('"public"."workflow_statistics_id_seq"', 1, false);
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict 7aCd2SXrJyaeyQIRnkPXePZekt377CIc2zHKDcXp793IgsCrNfL8u8AGqeJEpyG
+-- \unrestrict MmItrfasfaUYpFhCHBKlmyAaiebj8Ls06AcWdTHGLEUn7PpbO8cGruvbtry2zrc
 
 RESET ALL;
