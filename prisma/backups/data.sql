@@ -4,7 +4,7 @@ SET session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
--- \restrict wUJHL18QfNO0d82wEQYoOsH0FDEevGtHP6kp9RABQ2yzabQwXKa8TQEwHFHaZUr
+-- \restrict sTt3wp7mFotJOPEHchYbTHZd1ZDwdUy5cXDHjbNNKwKLAqqDcxxoYbBWFgc0D6H
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
@@ -225,7 +225,7 @@ project:viewer	Project Viewer	Read-only access to workflows, credentials, and ex
 --
 
 COPY "public"."user" ("id", "email", "firstName", "lastName", "password", "personalizationAnswers", "createdAt", "updatedAt", "settings", "disabled", "mfaEnabled", "mfaSecret", "mfaRecoveryCodes", "lastActiveAt", "roleSlug") FROM stdin;
-bd3996c8-88f5-45cb-9d05-904774f021fd	anchoresmark@gmail.com	Mark	Anchores	$2a$10$dLGUG/.Zam22Cnl1g5Qd7.pm7eN25T25SfSs7fWDXU1wU12YTZjM6	{"version":"v4","personalization_survey_submitted_at":"2026-07-31T02:26:22.269Z","personalization_survey_n8n_version":"1.111.0","automationGoalDevops":[],"companyType":"ecommerce","role":"engineering"}	2026-07-31 01:20:32.901+00	2026-08-01 09:33:54.073+00	{"userActivated":false,"easyAIWorkflowOnboarded":true}	f	f	\N	\N	2026-08-01	global:owner
+bd3996c8-88f5-45cb-9d05-904774f021fd	anchoresmark@gmail.com	Mark	Anchores	$2a$10$dLGUG/.Zam22Cnl1g5Qd7.pm7eN25T25SfSs7fWDXU1wU12YTZjM6	{"version":"v4","personalization_survey_submitted_at":"2026-07-31T02:26:22.269Z","personalization_survey_n8n_version":"1.111.0","automationGoalDevops":[],"companyType":"ecommerce","role":"engineering"}	2026-07-31 01:20:32.901+00	2026-08-03 01:37:49.477+00	{"userActivated":false,"easyAIWorkflowOnboarded":true}	f	f	\N	\N	2026-08-03	global:owner
 \.
 
 
@@ -2520,6 +2520,6 @@ SELECT pg_catalog.setval('"public"."workflow_statistics_id_seq"', 177, true);
 -- PostgreSQL database dump complete
 --
 
--- \unrestrict wUJHL18QfNO0d82wEQYoOsH0FDEevGtHP6kp9RABQ2yzabQwXKa8TQEwHFHaZUr
+-- \unrestrict sTt3wp7mFotJOPEHchYbTHZd1ZDwdUy5cXDHjbNNKwKLAqqDcxxoYbBWFgc0D6H
 
 RESET ALL;
